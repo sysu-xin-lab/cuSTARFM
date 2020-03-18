@@ -56,7 +56,7 @@ int parseParameters(char *fname, CuLayer *psensor,PARAMETER *par)
 		memset(buffer,0,1000);
 		if(fgets(buffer, 1000, in)==NULL)
 			continue;
-		if(strcmp(buffer, "STARFM_PARAMETER_END") == 0) 
+		if(strncmp(buffer, "STARFM_PARAMETER_END",20) == 0) 
 			break;
 		tokenptr = strtok_s(buffer, separator,&token);
 		label=tokenptr;
